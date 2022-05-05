@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/34eb52ac8d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container ">
+            <nav>
+                <ul id="menu">
+                    <!-- <li id="icon_bar">
+                <i class="fa-solid fa-bars"></i>
+              </li> -->
+                    <li> <a href="./index.html">home</a></li>
+                    <li> <a href="">News</a></li>
+                    <li> <a href="">Streaming</a></li>
+                    <li> <a href="">Kids</a></li>
+                </ul>
+            </nav>
+            <div class="link-list-btn">
+                <a class="search" href="./page3.html">Search</a>
+                <a href="./page4.html" class="btn2 m-l-2"><i class="fa-solid fa-user"></i> </a></div>
+        </div>
+    </header>
+
+    <div class="container m-t-2 flex-column flex-align-center">
+        <!-- <button class="home"><a href="./page1.html">HOME</a></button> -->
+        <div class="card">
+            <div class="situation link-list-btn">
+                <button class="button1 is-hidden">SINGLE</a></button>
+                <button class="button2">COUPLE</a></button>
+            </div>
+     
+        <div class="bar_recherche">
+
+            <div class="place_recherche m-t-2">
+                <input id="search" type="search" placeholder="search" required />
+                <button class="go"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+
+            <div class="custom-select m-t-2">
+                <select class="s1">
+                    <option value="0">1st Genres:</option>
+                    <option value="1">Action</option>
+                    <option value="2">Aventure</option>
+                    <option value="3">Comédie</option>
+                    <option value="4">Comédie dramatique</option>
+                    <option value="5">Drame</option>
+                    <option value="6">Fantastique</option>
+                    <option value="7">Guerre</option>
+                    <option value="8">Policier</option>
+                    <option value="9">Romance</option>
+                    <option value="10">horreur</option>
+                    <option value="11">anim</option>
+                    <option value="12">Documentaire</option>
+                </select>
+                <select class="s2 is-hidden">
+                    <option value="0">Second Genres:</option>
+                    <option value="1">Action</option>
+                    <option value="2">Aventure</option>
+                    <option value="3">Comédie</option>
+                    <option value="4">Comédie dramatique</option>
+                    <option value="5">Drame</option>
+                    <option value="6">Fantastique</option>
+                    <option value="7">Guerre</option>
+                    <option value="8">Policier</option>
+                    <option value="9">Romance</option>
+                    <option value="10">horreur</option>
+                    <option value="11">anim</option>
+                    <option value="12">Documentaire</option>
+                </select>
+            </div>
+            <p id="count"></p>
+
+            <div id="results"></div>
+
+            <article id="movie"></article>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://api.themoviedb.org/3';
+        const API_KEY = 'a4880995fbb07d40249df7d0c03c8383';
+        const IMAGES_URL = 'https://image.tmdb.org/t/p/w500';
+
+        const but1 = document.querySelector(".button1");
+        const but2 = document.querySelector(".button2");
+        const select1 = document.querySelector(".s1");
+        const select2 = document.querySelector(".s2");
+        const recherche = document.querySelector(".bar_recherche");
+        const $input = document.querySelector('.place_recherche');
+        const $count = document.querySelector('#count');
+        const $results = document.querySelector('#results');
+        const $movie = document.querySelector('#movie');
+
+
+
+        but2.addEventListener("click", function () {
+            console.log("clicked");
+            but1.classList.remove("is-hidden");
+            select2.classList.remove("is-hidden");
+
+        });
+        but1.addEventListener("click", function () {
+            console.log("clicked");
+            select2.classList.add("is-hidden");
+
+        });
+    </script>
+
+
+</body>
+
+</html>
